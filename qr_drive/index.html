@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QR_DRIVE(Fotoğraf ve Video Yükleme)</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Great+Vibes&family=Dancing+Script:wght@700&family=Roboto&display=swap');
+
+      :root {
+        --background-image: url('(arka plan görseli url sini buraya koyun)'); /* Örn: https://example.com/background.jpg */
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: var(--background-image);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+
+      h1 { 
+        font-family: 'Dancing Script', cursive;
+        font-size: 8rem;
+        color: white;
+        margin-bottom: 20px;
+        text-align: center;
+        text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
+      }
+
+      .date {
+        font-family: 'Great Vibes', cursive;
+        font-size: 3.5rem;
+        margin: 5px 0;
+        text-align: center;
+        text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
+        line-height: 1;
+      }
+
+      p {
+        font-family: 'Great Vibes', cursive;
+        font-size: 3.5rem;
+        max-width: 90%;
+        word-wrap: break-word;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        text-align: center;
+        text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.7);
+      }
+
+      .button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin: 15px;
+        width: 500px;
+        height: 160px;
+        background-color: rgba(217, 142, 154, 0.9);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        text-decoration: none;
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+
+      .button:hover { 
+        background-color: rgba(201, 120, 134, 0.9); 
+      }
+
+      .icon {
+        width: 70px;
+        height: 70px;
+      }
+
+      .icon2 {
+        position: absolute;
+        top: -80px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        width: 600px;
+        height: 600px;
+      }
+    </style>
+
+    <script>
+      function showInstructions(type) {
+        const message = type === 'photo'
+          ? `(fotoğraf yükleme talimatları için mesajınızı buraya yazın)`
+          : `(video yükleme talimatları için mesajınızı buraya yazın)`;
+        alert(message);
+      }
+
+      function redirectToDropbox() {
+        alert(`(alternatif bir yükleme yöntemi için mesajınızı buraya yazın)`);
+        window.open('(alternatif yükleme alanı URL sini buraya koyun)', '_blank');
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Üst kısımda gösterilecek görsel -->
+    <img src="(ikon görsel URL sini buraya koyun)" class="icon2" />
+
+    <!-- Etkinlik Başlığı -->
+    <h1>ETKİNLİK ADI</h1>
+
+    <!-- Etkinlik Tarihi -->
+    <div class="date">
+      <span>ETKİNLİK TARİHİ</span>
+    </div>
+
+    <!-- Etkinlik Mesajı -->
+    <p>ETKİNLİK MESAJI</p>
+
+    <!-- Fotoğraf Yükleme Butonu -->
+    <a class="button" href="(fotoğraf yükleme Google Drive URL sini buraya koyun)" 
+       target="_blank" onclick="showInstructions('photo')">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/camera.png" class="icon" />
+      Fotoğraf Yükle
+    </a>
+
+    <!-- Video Yükleme Butonu -->
+    <a class="button" href="(video yükleme Google Drive URL sini buraya koyun)" 
+       target="_blank" onclick="showInstructions('video')">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/video.png" class="icon" />
+      Video Yükle
+    </a>
+
+    <!-- Alternatif Yükleme Butonu -->
+    <a class="button" href="javascript:void(0)" onclick="redirectToDropbox()">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/upload.png" class="icon" />
+      Alternatif Yükleme
+    </a>
+  </body>
+</html>
